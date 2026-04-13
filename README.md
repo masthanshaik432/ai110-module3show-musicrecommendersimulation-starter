@@ -13,21 +13,18 @@ Your goal is to:
 
 Replace this paragraph with your own summary of what your version does.
 
+
+
 ---
 
 ## How The System Works
 
-Explain your design in plain language.
+Each song uses genre, mood, energy, tempo_bpm, valence, danceability, and acousticness. genre and mood are the strongest features so it goes down to the user's consistency when picking the important feature from the two (i.e. if the user is consistent with a certain genre then the genre plays a higher role). The UserProfile is where the preferred genre, mood, and values for the numeric features lie. The Recommender computes a score based off how close each song is to the user's preferences. As a result, the recommendation that comes out is a culimination of the higher scored song by the recommender along with one which hasn't been listned to, and gives some variety.
 
-Some prompts to answer:
+The final version of the algorithm scores every song against a single user taste profile, then recommends the ones with the highest scores. Each song earns points for matching things like genre and mood, plus extra points for being close to the user’s preferred values for features like energy, tempo, valence, danceability, and acousticness. This way, songs are rewarded for how closely they match the user’s ideal vibe—not just for having higher or lower values. The system can get too narrow and keep recommending the same type of songs, limiting discovery. In the current songs.csv, lofi mood and happy energy seem to show up slightly more.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+![Test 1 of Recommender](image.png)
 
-You can include a simple diagram or bullet list if helpful.
 
 ---
 
